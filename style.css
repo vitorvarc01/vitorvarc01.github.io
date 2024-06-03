@@ -103,7 +103,7 @@ a {
 .movies-container,
 .carrossel {
     margin-bottom: 40px;
-    width: 1200px;
+    max-width: 1200px;
     height: auto;
     display: flex;
     flex-wrap: nowrap;
@@ -210,6 +210,7 @@ a {
     gap: 24px;
     margin-bottom: 50px;
 
+
 }
 
 .highlight__video {
@@ -247,8 +248,8 @@ a {
     font-weight: bold;
     font-size: 24px;
     line-height: 150%;
-
     color: #e183c8;
+
 }
 
 .highlight__rating {
@@ -288,6 +289,8 @@ a {
     width: 470px;
     height: 200px;
     transition: 500ms all ease;
+
+
 }
 
 
@@ -362,7 +365,8 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    padding: 0px 10px;
+    padding-left: 0px;
 }
 
 .modal__genres {
@@ -394,4 +398,5 @@ a {
 
 .modal__average {
     background: #a785ed;
+    margin-right: 10px;
 }

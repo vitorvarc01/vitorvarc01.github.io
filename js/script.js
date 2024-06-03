@@ -7,7 +7,50 @@ let a = 0
 let b = 5
 
 
+function checkScreenSize() {
+    if (window.innerWidth <= 1000) {
 
+
+        const input = document.querySelector('.input')
+        input.style.width = '300px';
+        const highlight = document.querySelector('.highlight ')
+        highlight.style.flexDirection = 'column';
+        const highlight__video = document.querySelector('.highlight__video ')
+        highlight__video.style.width = '300px'
+        const highlight__info = document.querySelector('.highlight__info ')
+        highlight__info.style.width = '300px'
+        const highlight__description = document.querySelector('.highlight__description')
+        highlight__description.style.width = '270px'
+        highlight__description.style.maxHeight = '160px';
+        const highlight__title = document.querySelector('.highlight__title')
+        highlight__title.style.height = '50px';
+        highlight__title.style.fontSize = '18px';
+        const highlight__rating = document.querySelector('.highlight__rating')
+        highlight__rating.style.fontSize = '20px';
+        highlight__rating.style.margiTop = '0px'
+
+        c = 1
+        a = 0
+        b = 1
+
+        const modalimg = document.querySelector('.modal__img');
+        modalimg.style.maxWidth = '500px';
+        const modaldescription = document.querySelector('.modal__description');
+        modaldescription.style.maxWidth = '500px';
+        modaldescription.style.textAlign = 'center';
+        const modalgenreAverage = document.querySelector('.modal__genre-average');
+        modalgenreAverage.style.maxWidth = '500px'
+
+    }
+
+}
+
+window.onload = checkScreenSize;
+window.onresize = checkScreenSize;
+
+window.onresize = function () {
+    location.reload();
+};
 
 export async function getMovie(url) {
     try {
@@ -51,17 +94,9 @@ export async function showMovies(results, dados, dadosB) {
                 createmodals(filme);
             });
         }
+
     });
 }
-
-
-export function teste() {
-    console.log('dentro do show ')
-}
-
-
-
-
 
 export function createmodals(movie) {
     const modal = document.querySelector('.modal');
@@ -172,6 +207,9 @@ async function genderModal(id) {
     return divgenrus;
 }
 
+
+
+
 // Carrossel Direita
 const right = document.querySelector('.btn-next')
 right.addEventListener('click', async () => {
@@ -181,13 +219,16 @@ right.addEventListener('click', async () => {
     const results = data.results;
 
 
-    if (a === 15 || b === 20) {
-        a = -5; b = 0;
+    if (a === 20 || b === 20) {
+        if (window.innerWidth <= 1000) {
+            a = -1; b = 0;
+        }
+        else { a = -1; b = 4 }
     }
 
-    a += 5;
-    b += 5;
-
+    a++;
+    b++;
+    console.log('valor de a', a, 'valor de b', b, 'valor de c', c)
     showMovies(results, a, b);
 });
 
@@ -199,13 +240,24 @@ esquerda.addEventListener('click', async () => {
     const response = await fetch(API_URL);
     const data = await response.json();
     const resultados = data.results;
-    if (a === 0 || b <= 5) {
-        a = 20;
-        b = 25
-    }
+    if (a === 0 || b === 0) {
 
-    a -= 5;
-    b -= 5;
+        if (window.innerWidth <= 1000) {
+            a = 20; b = 21
+            console.log('aqui', a, b)
+        }
+
+        else {
+            a = 16;
+            b = 21
+            console.log('fora')
+        }
+
+        console.log('fora', a, b)
+    }
+    console.log('fora2', a, b)
+    a--;
+    b--;
 
     showMovies(resultados, a, b);
 });
@@ -248,7 +300,7 @@ export async function buscar(e, temaProcurado) {
     input.value = "";
 
 }
-
+const subtitle = document.querySelector('.subtitle')
 const body = document.querySelector('body');
 const darkButton = document.querySelector('.btn-theme');
 darkButton.addEventListener('click', () => {
@@ -257,10 +309,12 @@ darkButton.addEventListener('click', () => {
 
     if (body.classList.contains('dark')) {
         darkButton.src = './assets/dark-mode.svg';
-
+        subtitle.style.color = ' #fdfdfd'
     } else {
-
         darkButton.src = './assets/light-mode.svg';
+        subtitle.style.color = '#000'
     }
 });
+
+
 
