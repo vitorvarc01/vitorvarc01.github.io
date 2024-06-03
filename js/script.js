@@ -41,9 +41,6 @@ function checkScreenSize() {
         const modalgenreAverage = document.querySelector('.modal__genre-average');
         modalgenreAverage.style.maxWidth = '500px'
 
-        window.onresize = function () {
-            location.reload();
-        };
     }
 
 }
@@ -51,7 +48,7 @@ function checkScreenSize() {
 window.onload = checkScreenSize;
 window.onresize = checkScreenSize;
 
-''
+
 
 export async function getMovie(url) {
     try {
