@@ -8,14 +8,14 @@ let b = 5
 
 
 function checkScreenSize() {
-    window.onresize = function () {
-        location.reload();
-    };
+    // window.onresize = function () {
+    //     location.reload();
+    // };
     if (window.innerWidth <= 1050) {
 
-        window.onresize = function () {
-            location.reload();
-        };
+        // window.onresize = function () {
+        //     location.reload();
+        // };
 
         const input = document.querySelector('.input')
         input.style.width = '300px';
