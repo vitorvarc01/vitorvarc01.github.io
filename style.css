@@ -391,7 +391,9 @@ a {
 }
 
 .span1 {
-
+    text-align: center;
+    display: flex;
+    align-items: center;
     background-color: #e183c8;
     cursor: pointer;
 }
