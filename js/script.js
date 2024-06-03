@@ -8,14 +8,9 @@ let b = 5
 
 
 function checkScreenSize() {
-    // window.onresize = function () {
-    //     location.reload();
-    // };
+
     if (window.innerWidth <= 1050) {
 
-        // window.onresize = function () {
-        //     location.reload();
-        // };
 
         const input = document.querySelector('.input')
         input.style.width = '300px';
@@ -40,22 +35,22 @@ function checkScreenSize() {
         b = 1
 
         const modalimg = document.querySelector('.modal__img');
-        modalimg.style.maxWidth = '300px';
+        modalimg.style.maxWidth = '90%';
         const modaldescription = document.querySelector('.modal__description');
-        modaldescription.style.maxWidth = '300px';
+        modaldescription.style.maxWidth = '90%';
         modaldescription.style.textAlign = 'center';
         const modalgenreAverage = document.querySelector('.modal__genre-average');
-        modalgenreAverage.style.maxWidth = '300px';
+        modalgenreAverage.style.maxWidth = '90%';
         modalgenreAverage.style.flexDirection = 'column-reverse';
         modalgenreAverage.style.textAlign = 'center';
         const modal__title = document.querySelector('.modal__title');
         modal__title.style.fontSize = '25px';
         modal__title.style.textAlign = 'center';
-
-        const modal__close = document.querySelector('.modal__close');
-        modal__close.style.width = '20px'
-
-
+        const modal__average = document.querySelector('.modal__average');
+        modal__average.style.marginRight = '0px';
+        const modal__close = document.querySelector('.modal__close')
+        modal__close.style.width = '5%';
+        modal__close.style.marginBottom = '50px';
     }
 
 }

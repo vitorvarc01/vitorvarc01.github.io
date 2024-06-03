@@ -367,12 +367,17 @@ a {
     align-items: center;
     padding: 0px 10px;
     padding-left: 0px;
+
+    font-size: 15px;
 }
 
 .modal__genres {
     display: flex;
-    gap: 12px;
+    gap: 10px;
 
+
+    align-items: center;
+    justify-content: center;
 }
 
 .modal__genres,
@@ -384,9 +389,9 @@ a {
     font-family: "Manrope", sans-serif;
     font-style: normal;
     font-weight: bold;
-    font-size: 20px;
-    line-height: 150%;
 
+    line-height: 150%;
+    flex-wrap: nowrap;
     color: #ffffff;
 }
 
@@ -396,6 +401,8 @@ a {
     align-items: center;
     background-color: #e183c8;
     cursor: pointer;
+    flex-wrap: nowrap;
+
 }
 
 .modal__average {
